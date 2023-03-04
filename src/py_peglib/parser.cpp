@@ -13,7 +13,7 @@ namespace py_peglib {
     void parser::on(const std::string& keyword, boost::python::object lambda)
     {
         lib_parser[keyword.c_str()] = [lambda](const ::peg::SemanticValues &sv) {
-            lambda(semantic_values{sv});
+            return lambda(semantic_values{sv});
         };
     }
 

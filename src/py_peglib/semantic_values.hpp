@@ -17,6 +17,8 @@ namespace py_peglib {
         
         long size() const;
         
+        boost::python::object at(const long& index);
+
         const std::string to_string() const;
     };
 

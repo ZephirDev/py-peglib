@@ -7,8 +7,24 @@ parser = py_peglib.Parser("""
     %whitespace <- [ \n]*
 """)
 
-def lambdaOp(sv):
-    print(sv.toString())
+def number(sv):
+    return int(sv.toString())
 
+def lambdaOp(sv):
+    return sv.toString()
+
+def dumbCalc(sv):
+    r = sv.at(0)
+    for i in range(1, sv.size(), 2):
+        op = sv.at(i)
+        if op == "+":
+            r += sv.at(i+1)
+        else:
+            r -= sv.at(i+1)
+    return r
+
+parser.on("NUMBER", number)
 parser.on("OPERATOR", lambdaOp)
-parser.parse("0 + 1 + 2 - 3")
+parser.on("DUMB_CALC", dumbCalc)
+
+print(parser.parse("0 + 1 + 2 - 4"))

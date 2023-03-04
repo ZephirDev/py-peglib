@@ -11,6 +11,11 @@ namespace py_peglib {
         return sv.size();
     }
 
+    boost::python::object semantic_values::at(const long& index)
+    {
+        return std::any_cast<boost::python::object>(sv.at(index));
+    }
+
     const std::string semantic_values::to_string() const
     {
         return sv.token_to_string();

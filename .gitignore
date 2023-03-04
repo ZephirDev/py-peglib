@@ -1,7 +1,7 @@
 /build
 
-# Created by https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=c++,visualstudiocode,python
+# Created by https://www.toptal.com/developers/gitignore/api/c++,python,visualstudiocode,netbeans,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,python,visualstudiocode,netbeans,cmake
 
 ### C++ ###
 # Prerequisites
@@ -37,6 +37,33 @@
 *.out
 *.app
 
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
+
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -47,9 +74,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -224,4 +249,4 @@ poetry.toml
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode,python
+# End of https://www.toptal.com/developers/gitignore/api/c++,python,visualstudiocode,netbeans,cmake

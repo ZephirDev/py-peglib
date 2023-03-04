@@ -69,5 +69,12 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "C_Cpp.default.includePath": [
+        "${default}",
+        "./src/",
+        "./3rd-party/",
+        "/usr/include/python3.9"
+    ],
+    "C_Cpp.default.cppStandard": "c++17"
 }

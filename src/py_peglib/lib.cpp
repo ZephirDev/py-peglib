@@ -15,5 +15,6 @@ BOOST_PYTHON_MODULE(py_peglib) {
     boost::python::class_<::py_peglib::semantic_values>("SemanticValues", boost::python::no_init)
         .def("size", &::py_peglib::semantic_values::size)
         .def("toString", &::py_peglib::semantic_values::to_string)
+        .def("at", &::py_peglib::semantic_values::at)
     ;
 }
