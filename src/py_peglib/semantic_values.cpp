@@ -11,6 +11,11 @@ namespace py_peglib {
         return sv.size();
     }
 
+    long semantic_values::choice() const
+    {
+        return sv.choice();
+    }
+
     boost::python::object semantic_values::at(const long& index)
     {
         return std::any_cast<boost::python::object>(sv.at(index));

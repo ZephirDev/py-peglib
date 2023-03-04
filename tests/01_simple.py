@@ -27,4 +27,5 @@ parser.on("NUMBER", number)
 parser.on("OPERATOR", lambdaOp)
 parser.on("DUMB_CALC", dumbCalc)
 
+print(parser.isValid())
 print(parser.parse("0 + 1 + 2 - 4"))

@@ -16,6 +16,10 @@ namespace py_peglib {
 
         virtual ~parser() = default;
 
+        void enable_packrat_parsing();
+
+        bool isValid();
+
         void on(const std::string& keyword, boost::python::object lambda);
 
         boost::python::object parse(const std::string& value);

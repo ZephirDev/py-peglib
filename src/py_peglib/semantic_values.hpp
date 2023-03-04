@@ -16,6 +16,8 @@ namespace py_peglib {
         virtual ~semantic_values() = default;
         
         long size() const;
+
+        long choice() const;
         
         boost::python::object at(const long& index);
 

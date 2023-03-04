@@ -10,6 +10,16 @@ namespace py_peglib {
         : lib_parser(language)
     {}
 
+    void parser::enable_packrat_parsing()
+    {
+        lib_parser.enable_packrat_parsing();
+    }
+
+    bool parser::isValid()
+    {
+        return static_cast<bool>(lib_parser);
+    }
+
     void parser::on(const std::string& keyword, boost::python::object lambda)
     {
         lib_parser[keyword.c_str()] = [lambda](const ::peg::SemanticValues &sv) {
