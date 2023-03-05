@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main
+      - "releases/**"
+
+jobs:
+  build_wheel:
+    runs-on: ubuntu-22.04
+    container:
+      image: python:3.9.16
+    steps:
+      - name: Install dependencies
+        run: >-
+          apt update
+          && apt install build-essential cmake python-dev libboost-python-dev
+      - name: Build package
+        run: >-
+          python3 setup.py sdist bdist_wheel
+      - name: Install builded package
+        run: >-
+          pip install $(find dist/ -name "*.whl")
+      - name: Run demo
+        run: >-
+          ./tests/run-all.sh

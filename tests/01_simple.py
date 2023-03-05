@@ -27,5 +27,13 @@ parser.on("NUMBER", number)
 parser.on("OPERATOR", lambdaOp)
 parser.on("DUMB_CALC", dumbCalc)
 
-print(parser.isValid())
-print(parser.parse("0 + 1 + 2 - 4"))
+expr = "0 + 1 + 2 - 4"
+expectedResult = -1
+
+print("IsValid: ", parser.isValid())
+print("Expression: ", expr)
+print("Expected Result: ", expectedResult)
+result = parser.parse("0 + 1 + 2 - 4")
+print("Result: ", result)
+
+assert(result == expectedResult)
