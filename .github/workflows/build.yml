@@ -14,6 +14,8 @@ jobs:
         run: >-
           apt update -y
           && apt install -y build-essential cmake python-dev libboost-python-dev
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Build package
         run: >-
           python3 setup.py sdist bdist_wheel
@@ -23,3 +25,8 @@ jobs:
       - name: Run demo
         run: >-
           ./tests/run-all.sh
+      - name: Upload dist artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
