@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Install dependencies
         run: >-
-          apt update
-          && apt install build-essential cmake python-dev libboost-python-dev
+          apt update -y
+          && apt install -y build-essential cmake python-dev libboost-python-dev
       - name: Build package
         run: >-
           python3 setup.py sdist bdist_wheel
